@@ -1,0 +1,45 @@
+<!--
+	Redirector https to http:
+
+		- konten gambar dan video facebook/gplus
+
+-->
+<ruleset name="Http redirector">
+
+	<target host="*.akamaihd.net" />
+	<target host="*.googleusercontent.com" />
+	<target host="*s.youtube.com" />
+	<target host="*s.ytimg.com" />
+
+	<rule from="^https://fbcdn-profile-a.akamaihd.net/"
+		to="http://fbcdn-profile-a.akamaihd.net/" downgrade="1" />
+		
+	<rule from="^https://fbcdn-photos-([-a-z])-a.akamaihd.net/"
+		to="http://fbcdn-photos-$1-a.akamaihd.net/" downgrade="1" />		
+
+	<rule from="^https://fbexternal-a.akamaihd.net/(.*)"
+		to="http://external.ak.fbcdn.net/$1" downgrade="1" />
+<!-- 		
+	<rule from="^https://fbstatic-a.akamaihd.net/(.*)"
+		to="http://static.ak.fbcdn.net/$1" downgrade="1" />
+-->		
+	<rule from="^https://fbcdn-sphotos-([a-z])-a.akamaihd.net/"
+		to="http://fbcdn-sphotos-$1-a.akamaihd.net/" downgrade="1" />
+
+	<rule from="^https://fbcdn-video-a.akamaihd.net/"
+		to="http://fbcdn-video-a.akamaihd.net/" downgrade="1" />
+		
+<!--		
+	<rule from="^https://lh([0-9]).googleusercontent.com/"
+		to="https://lh$1.googleusercontent.com/" downgrade="1" />
+-->		
+	<rule from="^https://(.*).googleusercontent.com/"
+		to="http://$1.googleusercontent.com/" downgrade="1" />
+
+	<rule from="^https://(*.)youtube.com/"
+		to="http://$1youtube.com/" downgrade="1" />
+ 
+  <rule from="^https://s.ytimg.com/"
+		to="http://s.ytimg.com/" downgrade="1" />
+  		
+</ruleset>
